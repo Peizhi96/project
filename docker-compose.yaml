@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  code-box:
+    network_mode: "host"
+    image: code-box
+    container_name: code-box
+    volumes:
+      - ./data:/app/data
+    #env_file:
+      #- .env  # use .env file to set environment variables
+    command: tail -f /dev/null  # keep container running
+    restart: unless-stopped  # restart container if it stops
